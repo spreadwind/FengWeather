@@ -1,5 +1,7 @@
 package com.example.h.fengweather.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by H on 2017/8/8.
  */
@@ -16,16 +18,16 @@ public class City extends DataSupport {
     public void setId(int id) {
         this.id = id;
     }
-    public String getcityName() {
+    public String getCityName() {
         return cityName;
     }
-    public void setcityName(String provinceName) {
+    public void setCityName(String cityName) {
         this.cityName = cityName;
     }
     public int getCityCode() {
         return cityCode;
     }
-    public void setCityCode(int provinceCode) {
+    public void setCityCode(int cityCode) {
         this.cityCode = cityCode;
     }
     public void setProvinceId(int provinceId) {

@@ -1,5 +1,7 @@
 package com.example.h.fengweather.db;
 
+import org.litepal.crud.DataSupport;
+
 /**
  * Created by H on 2017/8/8.
  */
