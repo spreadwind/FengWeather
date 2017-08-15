@@ -41,9 +41,12 @@ public class WeatherActivity extends AppCompatActivity {
     private LinearLayout forecastLayout;
     private TextView aqiText;
     private TextView pm25Text;
+    private TextView qltyText;
     private TextView comfortText;
-    private TextView carWashText;
     private TextView sportText;
+    private TextView drsgText;
+    private TextView fluText;
+    private TextView carWashText;
     private ImageView bingPicImg;
     public SwipeRefreshLayout swipeRefresh;
     private String mWeatherId;
@@ -70,9 +73,12 @@ public class WeatherActivity extends AppCompatActivity {
         forecastLayout = (LinearLayout) findViewById(R.id.forecast_layout);
         aqiText = (TextView) findViewById(R.id.aqi_text);
         pm25Text = (TextView) findViewById(R.id.pm25_text);
+        qltyText = (TextView) findViewById(R.id.qlty_text);
         comfortText = (TextView) findViewById(R.id.comfort_text);
-        carWashText = (TextView) findViewById(R.id.car_wash_text);
         sportText = (TextView) findViewById(R.id.sport_text);
+        drsgText = (TextView) findViewById(R.id.drsg_text);
+        fluText = (TextView) findViewById(R.id.flu_text);
+        carWashText = (TextView) findViewById(R.id.car_wash_text);
 
         bingPicImg = (ImageView) findViewById(R.id.bing_pic_img);
         //手动刷新天气
@@ -183,6 +189,7 @@ public class WeatherActivity extends AppCompatActivity {
             TextView infoText = (TextView) view.findViewById(R.id.info_text);
             TextView maxTemText = (TextView) view.findViewById(R.id.max_tem_text);
             TextView minTemText = (TextView) view.findViewById(R.id.min_tem_text);
+
             dateText.setText(forcecast.date);
             infoText.setText(forcecast.more.info);
             maxTemText.setText(forcecast.temperature.max);
@@ -192,13 +199,19 @@ public class WeatherActivity extends AppCompatActivity {
         if (weather.aqi != null) {
             aqiText.setText(weather.aqi.city.aqi);
             pm25Text.setText(weather.aqi.city.pm25);
+            qltyText.setText(weather.aqi.city.qlty);
         }
+
         String comfort = "舒适度: " + weather.suggestion.comfort.info;
+        String sport = "运动指数: " + weather.suggestion.sport.info;
+        String dress = "穿衣指数: " + weather.suggestion.dress.info;
+        String flu = "感冒指数: " + weather.suggestion.flu.info;
         String carWash = "洗车指数: " + weather.suggestion.carWash.info;
-        String sport = "运动建议: " + weather.suggestion.sport.info;
         comfortText.setText(comfort);
-        carWashText.setText(carWash);
         sportText.setText(sport);
+        drsgText.setText(dress);
+        fluText.setText(flu);
+        carWashText.setText(carWash);
         weatherLayout.setVisibility(View.VISIBLE);
         //激活自动更新服务
         Intent intent = new Intent(this, AutoUpdateService.class);

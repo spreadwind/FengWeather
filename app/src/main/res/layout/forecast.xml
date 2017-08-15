@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
     android:background="@color/colorWeatherBG">
 
     <TextView
@@ -11,14 +12,21 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="15dp"
-        android:text="未来几天天气预报"
+        android:text="天气预报"
         android:textColor="@color/colorTextView"
-        android:textSize="16sp"/>
+        android:textSize="@dimen/font_size_weather_title_text"/>
     <LinearLayout
         android:id="@+id/forecast_layout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/colorView" />
 
 </LinearLayout>

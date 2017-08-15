@@ -6,4 +6,5 @@
     <color name="colorTextView">#fff</color>
     <color name="colorListView">#fff</color>
     <color name="colorWeatherBG">#8000</color>
+    <color name="colorView">#fff</color>
 </resources>
